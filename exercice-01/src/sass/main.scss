@@ -65,15 +65,23 @@ main {
     transform: translateY(-31px) rotate(-5deg);
 }
 .rectangle--red {
+    position: relative;
     width: fit-content;
     width: -moz-fit-content;
     padding: 0 30px;
 }
 
 .slogan {
+    position: relative;
     color: $white;
     font-weight: lighter;
     font-size: 1.55em;
+}
+
+.ellipse {
+    position: absolute;
+    z-index: 0;
+    left: -15%;
 }
 
 @include mobile-only {

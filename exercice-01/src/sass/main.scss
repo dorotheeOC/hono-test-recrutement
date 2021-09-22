@@ -1,0 +1,91 @@
+// Variables
+@import "variables";
+@import "mixins";
+
+html, 
+body {
+    height: 100%;
+}
+
+
+body {
+    background-color: $background-color;
+    margin: 0;
+    font-family: degular,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+h1 {
+    padding: 1.55rem 3rem 0 1.5rem;
+    width: calc(100% /2);
+    font-family: degular-display,sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3em;
+    color: $light-blue;
+    text-align: center;
+    background: url(../../assets/imgs/star-2.svg) left top/12% no-repeat, url(../../assets/imgs/star-3.svg) right bottom/8% no-repeat;
+}
+
+main {
+    height: inherit;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    overflow: hidden;
+    background: url(../../assets/imgs/frame-1.svg) left top no-repeat, $dark-blue;
+    & > * {
+        margin-top: 3rem;
+    }
+    & .logo {
+        height: 63px; 
+    }
+    & .star {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 1rem;
+        width: 10%;
+    }
+}
+
+
+.rectangle--orange {
+    width: fit-content;
+    width: -moz-fit-content;
+    padding: 20px 35px;
+    transform: translateY(-31px) rotate(-5deg);
+}
+.rectangle--red {
+    width: fit-content;
+    width: -moz-fit-content;
+    padding: 0 30px;
+}
+
+.slogan {
+    color: $white;
+    font-weight: lighter;
+    font-size: 1.55em;
+}
+
+@include mobile-only {
+    .container {
+        background: url(../../assets/imgs/frame-1.svg) left top/50% no-repeat, $dark-blue;
+    }
+    h1 {
+        font-size: 2em;
+        width: initial;
+        padding-top: .5rem;
+    }
+    .slogan {
+        font-size: .8em;
+    }
+}

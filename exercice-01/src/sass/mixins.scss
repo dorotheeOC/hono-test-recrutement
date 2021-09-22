@@ -1,0 +1,38 @@
+//map
+$shape-color: (
+    red: $dark-orange,
+    orange: $light-orange
+);
+$breakpoint:(
+    mobile: 700px,
+    laptop: 1200px
+);
+//mixin
+@mixin shape-color {
+    @each $color, $colorCode in $shape-color {
+      .rectangle--#{$color} {
+        background: $colorCode;
+      }
+    }
+}
+@include shape-color;
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoint, mobile)) {
+        @content;      
+    }
+}
+
+//animation
+@keyframes rotating {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    animation: rotating 5000ms linear infinite;
+}
